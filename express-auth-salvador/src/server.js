@@ -19,7 +19,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
 // Validar estado del servidor
-app.get('/health', (req, res) => res.status(200).json({ ok: true }));
+app.get('/health', (req, res) => res.status(200).json({ ok: true, service: 'express-auth-salvador' }));
 
 // Manejador global de errores
 app.use((err, req, res, next) => {

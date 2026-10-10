@@ -10,4 +10,7 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes);
 
+// Validar estado del servidor (cambio para probar el despliegue automático)
+app.get('/health', (req, res) => res.status(200).json({ ok: true, service: 'express-mongo-cloud' }));
+
 export default app;
